@@ -12,7 +12,7 @@ body {
     color: inherit;
     display: flex;
     align-items: center;
-    height: 300px;
+    /*     height: 300px; */
     margin: 0 auto;
 }
 
@@ -23,11 +23,8 @@ body {
 .ad-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    /* Dos columnas de igual tamaño */
     grid-gap: 5px;
-    /* Espacio entre las columnas */
     align-items: center;
-    /* Alinea los elementos verticalmente en el centro */
 }
 
 .ads-panel {

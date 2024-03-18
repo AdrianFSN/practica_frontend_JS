@@ -1,9 +1,11 @@
+import { loadSpinner } from "../utils/loadSpinner.js";
 import { getAds } from "./ads-list-model.js";
 import { buildAd, buildEmptyAdsList } from "./ads-list-view.js";
 import { dispatchEvent } from "../utils/dispatchEvent.js";
 
 export async function adsPanelController(adsPanel) {
     try {
+        loadSpinner('show-spinner', adsPanel);
         const ads = await getAds();
         if (ads.length > 0) {
             renderAds(ads, adsPanel);
@@ -17,7 +19,7 @@ export async function adsPanelController(adsPanel) {
             type: 'error'
         }, adsPanel);
     } finally {
-        alert('Aquí debería desaparecer el spinner')
+        loadSpinner('hide-spinner', adsPanel);
     }
 }
 

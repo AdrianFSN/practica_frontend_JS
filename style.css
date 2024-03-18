@@ -1,3 +1,7 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
 .ad {
     border: solid 1px lightgray;
     border-radius: 10px;
@@ -6,22 +10,20 @@
     color: inherit;
     display: block;
     height: 300px;
-    width: 90%;
     margin: 0 auto;
 }
 
 .ad-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
+    align-items: center;
 }
 
 .ads-panel {
     display: flex;
     flex-direction: row;
     gap: 10px;
+
 }
 
 .ads-panel ul {

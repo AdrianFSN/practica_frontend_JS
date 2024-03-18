@@ -1,17 +1,6 @@
 import { getAds } from "./ads-list-model.js";
 import { buildAd, buildEmptyAdsList } from "./ads-list-view.js";
-
-/* export function adsPanelController(adsPanel) {
-    const ads = ['anuncio1', 'anuncio2', 'anuncio3']
-    ads.forEach(item => {
-        const addItem = document.createElement('div');
-        addItem.innerHTML = `
-        <p>He añadido ${item}</p>
-        `
-        adsPanel.appendChild(addItem)
-        console.log(`Esto es adsPanel jujano ${adsPanel}`)
-    })
-} */
+import { dispatchEvent } from "../utils/dispatchEvent.js";
 
 export async function adsPanelController(adsPanel) {
     try {
@@ -22,8 +11,13 @@ export async function adsPanelController(adsPanel) {
             renderEmptyAdsList(adsPanel);
         };
 
-    } catch (error) {
-        alert("Ha habido un error al cargar los ads")
+    } catch (errorMessage) {
+        dispatchEvent('error-loading-ads', {
+            message: errorMessage,
+            type: 'error'
+        }, adsPanel);
+    } finally {
+        alert('Aquí debería desaparecer el spinner')
     }
 }
 
@@ -32,8 +26,6 @@ function renderAds(ads, adsPanel) {
         const adPiece = document.createElement('div');
         adPiece.innerHTML = buildAd(ad);
         adsPanel.appendChild(adPiece);
-        console.log(adPiece)
-        console.log(adsPanel)
     })
 };
 

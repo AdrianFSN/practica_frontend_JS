@@ -1,10 +1,15 @@
 export function buildAd(ad) {
     return `
   <a class="ad" href="ad-detail.html?adId=${ad.id}">
-    <p>${ad.title}</p>
-    <p>Price: ${ad.price}</p>
-    <p>Type: ${ad.sale ? "On sale" : "On search"}</p>
-    <p>Info: ${ad.description}</p>
+  <div class="ad-container">  
+  <ul>
+    <li><h3>${ad.title}</h3></li>
+    <li>Price: ${ad.price} €</li>
+    <li>Type of Offer: ${ad.sale ? "On sale" : "On search"}</li>
+    <li>Info: ${ad.description}</li>
+    </ul>
+    <img src="${ad.image}">
+    </div>
   </a>
   `
 }

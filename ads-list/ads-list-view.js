@@ -1,12 +1,14 @@
 export function buildAd(ad) {
+    const typeOfOffer = ad.sale ? "On sale" : "On search";
+    const cutInfo = ad.description.length > 50 ? ad.description.slice(0, 50) + '... [Read more]' : ad.description;
     return `
   <a class="ad" href="ad-detail.html?adId=${ad.id}">
   <div class="ad-container">  
   <ul>
     <li><h3>${ad.title}</h3></li>
     <li>Price: ${ad.price} €</li>
-    <li>Type of Offer: ${ad.sale ? "On sale" : "On search"}</li>
-    <li>Info: ${ad.description}</li>
+    <li>Type of Offer: ${typeOfOffer}</li>
+    <li>Info: ${cutInfo}</li>
     </ul>
     <img src="${ad.image}">
     </div>

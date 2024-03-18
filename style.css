@@ -3,20 +3,25 @@ body {
 }
 
 .ad {
-    border: solid 1px lightgray;
+    border: solid 1px #235789;
     border-radius: 10px;
     padding: 0.5rem;
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: flex;
+    align-items: center;
     height: 300px;
     margin: 0 auto;
 }
 
 .ad-container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* Dos columnas de igual tamaño */
+    grid-gap: 5px;
+    /* Espacio entre las columnas */
     align-items: center;
+    /* Alinea los elementos verticalmente en el centro */
 }
 
 .ads-panel {
@@ -28,10 +33,13 @@ body {
 
 .ads-panel ul {
     list-style: none;
-    width: 50%;
+    width: 80%;
 }
 
-.ads-panel img {
+.ad img {
     border-radius: 50%;
-    width: 40%;
+    border: solid 1px #235789;
+    width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
 }

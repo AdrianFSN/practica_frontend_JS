@@ -1,5 +1,6 @@
 import { getAdDetail } from "./ad-detail-model.js";
 import { buildAdDetail } from "./ad-detail-view.js";
+import { dispatchEvent } from "../utils/dispatchEvent.js";
 
 export async function adDetailController(node) {
     const params = new URLSearchParams(window.location.search);
@@ -13,7 +14,10 @@ export async function adDetailController(node) {
         const ad = await getAdDetail(adId);
         node.innerHTML = buildAdDetail(ad);
     } catch (error) {
-        alert(`Pues me ha salido un ${error}`);
+        dispatchEvent('error-loading-ad-detail', {
+            message: error,
+            type: 'error'
+        }, node);
     }
 
 }

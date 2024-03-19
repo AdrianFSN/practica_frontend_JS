@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         event.stopPropagation();
     });
 
-    adsPanel.addEventListener('show-spinner', showSpinner);
-    adsPanel.addEventListener('hide-spinner', hideSpinner);
+    adsPanel.addEventListener('show-spinner', (event) => {
+        showSpinner();
+        event.stopPropagation();
+    });
+    adsPanel.addEventListener('hide-spinner', (event) => {
+        hideSpinner();
+        event.stopPropagation();
+    });
 
     adsPanelController(adsPanel);
 })

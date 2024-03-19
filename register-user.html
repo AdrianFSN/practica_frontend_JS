@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commons.css">
+    <link rel="stylesheet" href="notifications/style.css">
+    <link rel="stylesheet" href="register-user/style.css">
+    <title>Register</title>
+</head>
+
+<body>
+    <section class="notification"></section>
+    <form id="registerForm">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" required>
+
+        <label for="password">Choose password</label>
+        <input type="password" id="password" required minlength="6">
+
+        <label for="password-check">Confirm password</label>
+        <input type="password" id="password-check" required minlength="6">
+
+        <button type="submit">Register user</button>
+    </form>
+
+    <script type="module" src="register-user.js"></script>
+
+</body>
+
+</html>

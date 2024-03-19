@@ -1,5 +1,12 @@
 .notification {
-    background-color: #D78295;
     border-radius: 5px;
     padding: .5rem;
+}
+
+.notification.success {
+    background-color: aquamarine;
+}
+
+.notification.error {
+    background-color: #D78295;
 }

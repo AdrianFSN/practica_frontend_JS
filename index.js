@@ -5,8 +5,9 @@ import { notificationController } from "./notifications/notifications-controller
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const notificationList = document.querySelector('.notification-list');
     const adsPanel = document.querySelector('.ads-panel');
+
+    const notificationList = document.querySelector('.notification-list');
     const { showNotification } = notificationController(notificationList);
 
     const spinner = document.querySelector('#spinner');
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSpinner();
         event.stopPropagation();
     });
+
     adsPanel.addEventListener('hide-spinner', (event) => {
         hideSpinner();
         event.stopPropagation();

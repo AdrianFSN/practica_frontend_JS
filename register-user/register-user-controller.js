@@ -1,4 +1,5 @@
 import { dispatchEvent } from "../utils/dispatchEvent.js";
+import { loadSpinner } from "../utils/loadSpinner.js";
 import { createUser } from "./register-user-model.js";
 
 export function registerUserController(formNode) {
@@ -54,6 +55,7 @@ export function registerUserController(formNode) {
         const password = formNode.querySelector('#password');
 
         try {
+            loadSpinner('show-spinner', formNode)
             await createUser(email.value, password.value);
             dispatchEvent('register-user-notification', {
                 message: 'Congrats, you are a registered user now!',
@@ -69,6 +71,8 @@ export function registerUserController(formNode) {
                 message: error,
                 type: 'error'
             }, formNode);
+        } finally {
+            loadSpinner('hide-spinner', formNode);
         };
     };
 };

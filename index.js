@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationList = document.querySelector('.notification-list');
     const adsPanel = document.querySelector('.ads-panel');
     const { showNotification } = notificationController(notificationList);
+
     const spinner = document.querySelector('#spinner');
     const { showSpinner, hideSpinner } = spinnerController(spinner)
 

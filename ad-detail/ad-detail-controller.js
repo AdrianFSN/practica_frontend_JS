@@ -1,3 +1,4 @@
+import { loadSpinner } from "../utils/loadSpinner.js";
 import { getAdDetail } from "./ad-detail-model.js";
 import { buildAdDetail } from "./ad-detail-view.js";
 import { dispatchEvent } from "../utils/dispatchEvent.js";
@@ -11,6 +12,7 @@ export async function adDetailController(node) {
     }
 
     try {
+        loadSpinner('show-spinner', node)
         const ad = await getAdDetail(adId);
         node.innerHTML = buildAdDetail(ad);
     } catch (error) {
@@ -18,6 +20,8 @@ export async function adDetailController(node) {
             message: error,
             type: 'error'
         }, node);
+    } finally {
+        loadSpinner('hide-spinner', node);
     }
 
 }

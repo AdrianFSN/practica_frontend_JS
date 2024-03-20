@@ -95,6 +95,7 @@ export function registerUserController(registerFormNode) {
                 message: error,
                 type: 'error'
             }, registerFormNode);
+
         } finally {
             loadSpinner('hide-spinner', registerFormNode);
         };

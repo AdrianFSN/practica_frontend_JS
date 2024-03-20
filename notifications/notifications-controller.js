@@ -10,7 +10,7 @@ export function notificationController(notificationNode) {
 
         setTimeout(() => {
             notification.remove()
-        }, 5000);
+        }, 2000);
     }
 
     return {

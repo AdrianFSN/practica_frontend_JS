@@ -6,3 +6,36 @@ body {
 h3 {
     color: #235789;
 }
+
+form {
+    display: flex;
+    background-color: white;
+    border: 1px solid #D78295;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    gap: 10px;
+    padding: 1rem;
+    align-items: center;
+}
+
+form input {
+    width: 60%;
+    border-radius: 5px;
+
+}
+
+form button {
+    width: 50%;
+    background-color: #D81E5B;
+    border: none;
+    border-radius: 5px;
+    padding: .5rem;
+    color: white;
+    margin-top: 1rem;
+}
+
+.field-error {
+    border: 2px solid red;
+}

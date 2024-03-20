@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const { showSpinner, hideSpinner } = spinnerController(spinner);
 
     registerForm.addEventListener('register-user-notification', (event) => {
-        event.stopPropagation();
         showNotification(event.detail.message, event.detail.type);
+        event.stopPropagation();
     });
 
     registerForm.addEventListener('show-spinner', (event) => {
         showSpinner();
         event.stopPropagation();
-    })
+    });
 
     registerForm.addEventListener('hide-spinner', (event) => {
         hideSpinner();

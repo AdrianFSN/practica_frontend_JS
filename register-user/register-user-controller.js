@@ -2,65 +2,115 @@ import { dispatchEvent } from "../utils/dispatchEvent.js";
 import { loadSpinner } from "../utils/loadSpinner.js";
 import { createUser } from "./register-user-model.js";
 
-export function registerUserController(formNode) {
-    formNode.addEventListener('submit', (event) => {
+export function registerUserController(registerFormNode) {
+    registerFormNode.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        handleSignupFormSubmit(formNode);
+        handleSignupFormSubmit(registerFormNode);
     });
 
-    function handleSignupFormSubmit(registerForm) {
+    function handleSignupFormSubmit(registerFormNode) {
         let errors = [];
+        let emptyFields = isFieldEmpty(registerFormNode);
+        let passwordsTooShorts = isPasswordShort(registerFormNode);
 
-        if (!isEmailValid(registerForm)) {
+
+        if (!isEmailValid(registerFormNode)) {
             errors.push('Wrong format for email field');
         };
 
-        if (!arePasswordsEqual(registerForm)) {
+        if (!arePasswordsEqual(registerFormNode)) {
             errors.push('"Password" and "Confirm password" are different')
+        };
+
+        if (emptyFields.length > 0) {
+            for (let i = 0; i < emptyFields.length; i++) {
+                errors.push(emptyFields[i]);
+            };
+        };
+        if (passwordsTooShorts.length > 0) {
+            for (let i = 0; i < passwordsTooShorts.length; i++) {
+                errors.push(passwordsTooShorts[i]);
+            };
         };
 
         showFormErrors(errors);
 
         if (errors.length === 0) {
-            registerUser(registerForm);
+            registerUser(registerFormNode);
         };
     };
 
-    function isEmailValid(registerForm) {
-        const email = registerForm.querySelector('#email');
+    function isEmailValid(registerFormNode) {
+        const email = registerFormNode.querySelector('#email');
         const emailRegExp = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
 
         return emailRegExp.test(email.value);
     };
 
-    function arePasswordsEqual(inputFormPasswords) {
-        const password = inputFormPasswords.querySelector('#password');
-        const passwordCheck = inputFormPasswords.querySelector('#password-check');
+    function arePasswordsEqual(registerFormNode) {
+        const password = registerFormNode.querySelector('#password');
+        const passwordCheck = registerFormNode.querySelector('#password-check');
 
         return password.value === passwordCheck.value;
     };
+
+    function isFieldEmpty(registerFormNode) {
+        const email = registerFormNode.querySelector('#email');
+        const password = registerFormNode.querySelector('#password');
+        const passwordCheck = registerFormNode.querySelector('#password-check');
+
+        let emptyFields = []
+
+        if (email.value.length === 0) {
+            emptyFields.push('Email field cannot be empty');
+        }
+
+        if (password.value.length === 0) {
+            emptyFields.push('Password field cannot be empty');
+        }
+        if (passwordCheck.value.length === 0) {
+            emptyFields.push('Password confirmation field cannot be empty');
+        }
+        return emptyFields;
+
+    };
+
+    function isPasswordShort(registerFormNode) {
+        const password = registerFormNode.querySelector('#password');
+        const passwordCheck = registerFormNode.querySelector('#password-check');
+        const minLength = password.minLength;
+        let shortPasswordsArray = [];
+
+        if (password.value.length < minLength) {
+            shortPasswordsArray.push(`Password should be at least ${minLength} characters`);
+        };
+        if (passwordCheck.value.length < minLength) {
+            shortPasswordsArray.push(`Password confirmation should be at least ${minLength} characters`);
+        };
+        return shortPasswordsArray;
+    }
 
     function showFormErrors(errorsList) {
         for (const error of errorsList) {
             dispatchEvent('register-user-notification', {
                 message: error,
                 type: 'error'
-            }, formNode);
+            }, registerFormNode);
         };
     };
 
-    async function registerUser(formNode) {
-        const email = formNode.querySelector('#email');
-        const password = formNode.querySelector('#password');
+    async function registerUser(registerFormNode) {
+        const email = registerFormNode.querySelector('#email');
+        const password = registerFormNode.querySelector('#password');
 
         try {
-            loadSpinner('show-spinner', formNode)
+            loadSpinner('show-spinner', registerFormNode)
             await createUser(email.value, password.value);
             dispatchEvent('register-user-notification', {
                 message: 'Congrats, you are a registered user now!',
                 type: 'success'
-            }, formNode);
+            }, registerFormNode);
 
             setTimeout(() => {
                 window.location.href = 'index.html';
@@ -70,9 +120,9 @@ export function registerUserController(formNode) {
             dispatchEvent('register-user-notification', {
                 message: error,
                 type: 'error'
-            }, formNode);
+            }, registerFormNode);
         } finally {
-            loadSpinner('hide-spinner', formNode);
+            loadSpinner('hide-spinner', registerFormNode);
         };
     };
 };

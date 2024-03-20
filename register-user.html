@@ -14,15 +14,16 @@
 <body>
     <section class="notification"></section>
     <form id="registerForm" novalidate>
+        <h2>Signup Form</h2>
         <section id="spinner"></section>
-        <label for="email">Email</label>
+        <label for="email">Email *</label>
         <input type="text" id="email" required>
 
-        <label for="password">Choose password</label>
+        <label for="password">Choose password *</label>
         <input type="password" id="password" required minlength="6">
 
-        <label for="password-check">Confirm password</label>
-        <input type="password" id="password-check" required minlength="6">
+        <label for="passwordCheck">Confirm password *</label>
+        <input type="password" id="passwordCheck" required minlength="6">
 
         <button type="submit">Register user</button>
     </form>

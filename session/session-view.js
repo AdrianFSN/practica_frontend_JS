@@ -12,6 +12,6 @@ export function buildSession() {
 export function buildAuthenticatedSession() {
   return `
     <button>Logout</button>
-    <a href="./create-ad.html">Create ad</a>
+    <a href="./ad-creation.html">Create ad</a>
     `
 }

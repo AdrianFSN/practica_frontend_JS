@@ -1,3 +1,5 @@
+import { loadSpinner } from "../utils/loadSpinner.js";
+import { dispatchEvent } from "../utils/dispatchEvent.js"
 import { insertAd } from "./ad-creation-model.js";
 
 export function insertAdController(insertAdFormNode) {
@@ -9,12 +11,26 @@ export function insertAdController(insertAdFormNode) {
         const adToInsert = handleInsertAdForm(insertAdFormNode);
 
         try {
+            loadSpinner('show-spinner', insertAdFormNode);
             await insertAd(adToInsert);
-            setTimeout(() => {
+
+            dispatchEvent('notification-creating-ad', {
+                message: 'Your ad is live now!',
+                type: 'success'
+            }, insertAdFormNode);
+
+            /* setTimeout(() => {
                 window.location = "./index.html";
-            }, 2000);
+            }, 2000); */
+
         } catch (error) {
-            alert(error)
+            dispatchEvent('notification-creating-ad', {
+                message: error,
+                type: 'error'
+            }, insertAdFormNode);
+
+        } finally {
+            loadSpinner('hide-spinner', insertAdFormNode);
         }
     });
 
@@ -28,7 +44,19 @@ export function insertAdController(insertAdFormNode) {
         const description = formData.get("description")
 
         const image = formData.get("image");
+        console.log('Esto es image ', image)
         const category = formData.get("category");
+        console.log('Esto es category ', category)
+
+        const objetoPrueba = {
+            name: name,
+            price: price,
+            sale: isOnSale,
+            description: description,
+            image: image,
+            category: category
+        }
+        console.log('Esto es objeto prueba', objetoPrueba);
 
         return {
             name: name,

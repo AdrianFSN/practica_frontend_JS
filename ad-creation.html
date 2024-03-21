@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="notifications/style.css">
+    <link rel="stylesheet" href="spinner/style.css">
+    <link rel="stylesheet" href="commons.css">
+    <link rel="stylesheet" href="ad-creation/style.css">
+
+    <title>Publish your article here!</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+
+        </nav>
+    </header>
+    <section class="notification"></section>
+    <form id="insertAd" novalidate>
+        <h2>Publish your ad here!</h2>
+        <section id="spinner"></section>
+        <div>
+            <label for="name">Give a name to your product</label>
+            <input type="text" name="name" id="name" placeholder="Mobile - brand- model..." required>
+        </div>
+
+        <div>
+            <label for="price">Enter your price in €</label>
+            <input type="number" name="price" id="price" placeholder="20" required>
+        </div>
+
+        <div>
+
+            <label for="onSale">Want to sell</label>
+            <input type="radio" name="typeOfOffer" id="onSale" required>
+
+            <label for="onSearch">Want to buy</label>
+            <input type="radio" name="typeOfOffer" id="onSearch" required>
+
+        </div>
+
+        <div>
+            <label for="description">Product's description</label>
+            <textarea name="description" id="description" cols="30" rows="10" maxlength="140"
+                placeholder="Write a short description of the product. 140 chars max." required></textarea>
+        </div>
+        <div>
+            <label for="image">Enter the URL of your image</label>
+            <input type="url" name="image" id="image" placeholder="https//... png">
+        </div>
+        <div>
+            <label for="category">Tag your product</label>
+            <input type="text" name="category" id="category"
+                placeholder="Enter comma separated tags: lifestyle, work, motor, mobile..." required>
+        </div>
+
+        <button type="submit">Insert ad</button>
+    </form>
+    <script type="module" src="ad-creation.js"></script>
+</body>
+
+</html>

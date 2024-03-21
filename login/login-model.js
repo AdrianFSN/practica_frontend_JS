@@ -6,9 +6,6 @@ export const loginUser = async (email, password) => {
         password: password
     }
 
-    console.log('Esto es username en el modelo ahora: ', body.username)
-    console.log('Esto es body en el modelo ahora: ', body)
-
     let response;
 
     try {
@@ -23,18 +20,15 @@ export const loginUser = async (email, password) => {
         const data = await response.json();
 
         if (!response.ok) {
-            console.log('He dado una respuesta no ok desde el modelo ', response.ok)
             throw new Error(data.message)
         };
 
         if (response.ok) {
-            console.log('He dado una respuesta ok desde el modelo', data.accessToken)
             return data.accessToken
         };
 
     } catch (error) {
         if (error.message) {
-            console.log('He hablado desde el modelo con error.message ', error.message)
             throw error.message;
         } else {
             throw error;

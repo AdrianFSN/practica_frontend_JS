@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const { showSpinner, hideSpinner } = spinnerController(spinner);
 
     loginFormNode.addEventListener('login-user-notification', (event) => {
-        event.stopPropagation();
         showNotification(event.detail.message, event.detail.type);
+        event.stopPropagation();
     });
 
     loginFormNode.addEventListener('show-spinner', (event) => {

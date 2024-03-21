@@ -15,16 +15,16 @@ export const loginController = (loginFormNode) => {
         try {
             loadSpinner('show-spinner', loginFormNode);
 
-            console.log('Esto es email justo tras try en controller: ', email)
-            console.log('Esto es password justo tras try en controller: ', password)
-
             const jwt = await loginUser(email, password);
             dispatchEvent('login-user-notification', {
                 message: 'Login successful!',
                 type: 'success'
             }, loginFormNode);
             localStorage.setItem('token', jwt);
-            window.location = './index.html';
+
+            setTimeout(() => {
+                window.location = './index.html';
+            }, 2000);
 
         } catch (error) {
             dispatchEvent('login-user-notification', {
@@ -37,16 +37,13 @@ export const loginController = (loginFormNode) => {
     };
 
     const getLoginData = (loginFormNode) => {
-        const formData = new FormData(loginFormNode);
-        console.log('Esto es lo que hay en formData', formData)
-        const email = formData.get('email');
-        const password = formData.get('password');
-        /* const email = loginFormNode.querySelector('#email');
-        const password = loginFormNode.querySelector('#password'); */
+
+        const email = loginFormNode.querySelector('#email');
+        const password = loginFormNode.querySelector('#password');
 
         return {
-            email: email,
-            password: password
+            email: email.value,
+            password: password.value
         };
     };
 };

@@ -5,17 +5,17 @@ export const insertAd = async (insertAd) => {
     const dummyData = {
         image: 'https://res.cloudinary.com/douaatasp/image/upload/v1711022809/Articles/Interrogaci%C3%B3n_ibz69o.jpg'
     };
-
+    console.log('Esto es insertAd desde el modelo: ', insertAd)
     const body = {
         name: insertAd.name,
         sale: insertAd.sale,
         price: insertAd.price,
         description: insertAd.description,
-        image: insertAd.image,
-        tags: insertAd.tags,
-        ...dummyData
+        image: insertAd.image ? insertAd.image : dummyData.image,
+        tags: insertAd.category,
     };
 
+    console.log('Esto es body  desde el modelo: ', body)
     let response;
 
     try {

@@ -9,6 +9,7 @@ export function insertAdController(insertAdFormNode) {
         event.preventDefault();
 
         const adToInsert = handleInsertAdForm(insertAdFormNode);
+        console.log('Esto es adToInsert: ', adToInsert)
 
         try {
             loadSpinner('show-spinner', insertAdFormNode);

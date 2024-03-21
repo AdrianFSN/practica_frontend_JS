@@ -22,3 +22,7 @@
     padding: 2rem;
     margin-top: 2rem;
 }
+
+.ad-detail .remove-button-hidden {
+    display: none;
+}

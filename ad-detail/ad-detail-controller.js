@@ -35,13 +35,15 @@ export async function adDetailController(adDetailNode) {
     async function handleRemoveAdButton(adDetailNode, ad) {
         const token = localStorage.getItem('token');
         const userData = await getUserData(token);
+        const removeAdButton = adDetailNode.querySelector('#removeAdButton');
 
         if (ad.userId === userData.id) {
-            const removeAdButton = adDetailNode.querySelector('#removeAdButton');
-            removeAdButton.removeAttribute('disabled');
+            removeAdButton.classList.remove('.remove-button-hidden');
             removeAdButton.addEventListener('click', () => {
                 removeAd(ad.id, token)
             });
+        } else {
+            removeAdButton.classList.add('.remove-button-hidden');
         };
     };
 

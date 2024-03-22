@@ -37,9 +37,6 @@ export async function adDetailController(adDetailNode) {
         const userData = await getUserData(token);
         const removeAdButton = adDetailNode.querySelector('#removeAdButton');
 
-        console.log('Este es ad.userID: ', ad.owner);
-        console.log('Este es userData.id: ', userData.id);
-
         if (ad.owner === userData.id) {
             removeAdButton.classList.remove('remove-button-hidden');
             removeAdButton.addEventListener('click', () => {

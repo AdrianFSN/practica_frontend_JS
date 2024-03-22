@@ -4,6 +4,14 @@ import { spinnerController } from "./spinner/spinner-controller.js";
 import { insertAdController } from "./ad-creation/ad-creation-controller.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+        setTimeout(() => {
+            window.location.href = './index.html';
+        }, 2000);
+    };
+
     const session = document.querySelector('#session');
     sessionController(session);
 

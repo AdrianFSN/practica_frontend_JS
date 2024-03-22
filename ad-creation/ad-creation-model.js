@@ -16,7 +16,6 @@ export const insertAd = async (insertAd) => {
         tags: insertAd.category ? insertAd.category : dummyData.tags,
     };
 
-    console.log('Esto es body  desde el modelo: ', body)
     let response;
 
     try {

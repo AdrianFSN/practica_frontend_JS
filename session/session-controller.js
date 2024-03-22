@@ -8,6 +8,7 @@ export function sessionController(navNode) {
         logoutButton.addEventListener('click', () => {
             localStorage.removeItem('token');
             sessionController(navNode);
+            window.location.href = './index.html';
         });
     } else {
         navNode.innerHTML = buildSession();

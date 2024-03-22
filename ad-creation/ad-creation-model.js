@@ -3,16 +3,17 @@ export const insertAd = async (insertAd) => {
     const token = localStorage.getItem('token');
 
     const dummyData = {
-        image: 'https://res.cloudinary.com/douaatasp/image/upload/v1711022809/Articles/Interrogaci%C3%B3n_ibz69o.jpg'
+        image: 'https://res.cloudinary.com/douaatasp/image/upload/v1711022809/Articles/Interrogaci%C3%B3n_ibz69o.jpg',
+        tags: 'Not defined by the owner of the ad, sorry.'
     };
-    console.log('Esto es insertAd desde el modelo: ', insertAd)
+
     const body = {
         name: insertAd.name,
         sale: insertAd.sale,
         price: insertAd.price,
         description: insertAd.description,
         image: insertAd.image ? insertAd.image : dummyData.image,
-        tags: insertAd.category,
+        tags: insertAd.category ? insertAd.category : dummyData.tags,
     };
 
     console.log('Esto es body  desde el modelo: ', body)

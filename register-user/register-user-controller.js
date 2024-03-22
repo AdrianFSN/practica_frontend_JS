@@ -88,7 +88,7 @@ export function registerUserController(registerFormNode) {
 
             setTimeout(() => {
                 window.location.href = 'index.html';
-            }, 3000);
+            }, 2000);
 
         } catch (error) {
             dispatchEvent('register-user-notification', {

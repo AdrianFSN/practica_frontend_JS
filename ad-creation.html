@@ -14,9 +14,7 @@
 
 <body>
     <header>
-        <nav>
-
-        </nav>
+        <nav id="session"></nav>
     </header>
     <section class="notification"></section>
     <form id="insertAd" novalidate>
@@ -49,12 +47,12 @@
         </div>
         <div>
             <label for="image">Enter the URL of your image</label>
-            <input type="text" name="image" id="image" placeholder="https//... png">
+            <input type="url" name="image" id="image" placeholder="https//... png">
         </div>
         <div>
             <label for="category">Tag your product</label>
             <input type="text" name="category" id="category"
-                placeholder="Enter comma separated tags: lifestyle, work, motor, mobile..." required>
+                placeholder="Enter comma separated tags from 'lifestyle', 'work', 'motor', 'mobile'">
         </div>
 
         <button type="submit">Insert ad</button>

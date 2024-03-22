@@ -1,8 +1,12 @@
+import { sessionController } from "./session/session-controller.js";
 import { notificationController } from "./notifications/notifications-controller.js"
 import { spinnerController } from "./spinner/spinner-controller.js";
 import { insertAdController } from "./ad-creation/ad-creation-controller.js";
 
 document.addEventListener('DOMContentLoaded', () => {
+    const session = document.querySelector('#session');
+    sessionController(session);
+
     const spinner = document.querySelector('#spinner');
     const { showSpinner, hideSpinner } = spinnerController(spinner);
 

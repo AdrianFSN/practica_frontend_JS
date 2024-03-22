@@ -11,7 +11,13 @@ export function buildSession() {
 
 export function buildAuthenticatedSession() {
   return `
+    <ul>
+    <li>
     <button>Logout</button>
+    <li>
+    <li>
     <a href="./ad-creation.html">Create ad</a>
-    `
-}
+    </li>
+    </ul>
+    `;
+};

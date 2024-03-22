@@ -5,7 +5,7 @@ function parseAd(ad) {
         description: ad.description,
         image: ad.image,
         id: ad.id,
-        tag: ad.tags,
+        tag: [ad.tags],
         price: ad.price,
         sale: ad.sale
     };

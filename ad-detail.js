@@ -5,7 +5,7 @@ import { notificationController } from "./notifications/notifications-controller
 document.addEventListener('DOMContentLoaded', () => {
     const adDetail = document.querySelector('.ad-detail');
 
-    const notificationList = document.querySelector('.notification-list');
+    const notificationList = document.querySelector('.notification');
     const { showNotification } = notificationController(notificationList);
 
     const spinner = document.querySelector('#spinner')

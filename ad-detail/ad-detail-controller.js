@@ -23,7 +23,7 @@ export async function adDetailController(adDetailNode) {
         container.innerHTML = buildAdDetail(ad);
 
     } catch (error) {
-        dispatchEvent('error-loading-ad-detail', {
+        dispatchEvent('notification-ad-detail', {
             message: error,
             type: 'error'
         }, adDetailNode);
@@ -37,13 +37,14 @@ export async function adDetailController(adDetailNode) {
         const userData = await getUserData(token);
         const removeAdButton = adDetailNode.querySelector('#removeAdButton');
 
-        if (ad.userId === userData.id) {
-            removeAdButton.classList.remove('.remove-button-hidden');
+        console.log('Este es ad.userID: ', ad.owner);
+        console.log('Este es userData.id: ', userData.id);
+
+        if (ad.owner === userData.id) {
+            removeAdButton.classList.remove('remove-button-hidden');
             removeAdButton.addEventListener('click', () => {
                 removeAd(ad.id, token)
             });
-        } else {
-            removeAdButton.classList.add('.remove-button-hidden');
         };
     };
 
@@ -51,12 +52,20 @@ export async function adDetailController(adDetailNode) {
         if (window.confirm('Are you sure you want to delete this ad?')) {
             try {
                 await deleteAd(adId, token);
+                dispatchEvent('notification-ad-detail', {
+                    message: 'Ad deleted succesfully',
+                    type: 'success'
+                }, adDetailNode);
+
                 setTimeout(() => {
                     window.location.href = './index.html'
                 }, 2000);
 
             } catch (error) {
-                alert(error);
+                dispatchEvent('notification-ad-detail', {
+                    message: error,
+                    type: 'error'
+                }, adDetailNode);
             };
         };
     };

@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinner = document.querySelector('#spinner')
     const { showSpinner, hideSpinner } = spinnerController(spinner)
 
-    adDetail.addEventListener('error-loading-ad-detail', (event) => {
+    adDetail.addEventListener('notification-ad-detail', (event) => {
         showNotification(event.detail.message, event.detail.type);
         event.stopPropagation();
     })

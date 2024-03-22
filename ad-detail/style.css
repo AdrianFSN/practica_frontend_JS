@@ -23,6 +23,18 @@
     margin-top: 2rem;
 }
 
-.ad-detail .remove-button-hidden {
+.remove-button-hidden {
     display: none;
+}
+
+.buttons-container {
+    margin-bottom: 1rem;
+}
+
+.buttons-container button {
+    background-color: #D81E5B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3rem;
 }

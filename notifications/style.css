@@ -1,13 +1,13 @@
 .notification {
-    position: absolute;
-    top: 20%;
+    position: fixed;
+    top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
     display: block;
     border-radius: 5px;
     padding: .5rem;
     width: 40%;
     text-align: center;
-    transform: translate(-50%);
 }
 
 .notification.success {

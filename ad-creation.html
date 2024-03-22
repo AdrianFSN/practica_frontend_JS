@@ -20,40 +20,37 @@
     <form id="insertAd" novalidate>
         <h2>Publish your ad here!</h2>
         <section id="spinner"></section>
-        <div>
-            <label for="name">Give a name to your product</label>
-            <input type="text" name="name" id="name" placeholder="Mobile - brand- model..." required>
+        <label for="name">Give a name to your product</label>
+        <input type="text" name="name" id="name" placeholder="Mobile - brand- model..." required>
+
+        <label for="price">Enter your price in €</label>
+        <input type="number" name="price" id="price" placeholder="20" required>
+
+        <div class="radio-container">
+            <div>
+                <span> <label for="onSale">Want to sell</label></span>
+                <span><input type="radio" name="typeOfOffer" id="onSale" required></span>
+            </div>
+
+            <div>
+                <span><label for="onSearch">Want to buy</label></span>
+                <span><input type="radio" name="typeOfOffer" id="onSearch" required></span>
+            </div>
+
         </div>
 
-        <div>
-            <label for="price">Enter your price in €</label>
-            <input type="number" name="price" id="price" placeholder="20" required>
-        </div>
+        <label for="description">Product's description</label>
+        <textarea name="description" id="description" cols="30" rows="10" maxlength="140"
+            placeholder="Write a short description of the product. 140 chars max." required></textarea>
 
-        <div>
 
-            <label for="onSale">Want to sell</label>
-            <input type="radio" name="typeOfOffer" id="onSale" required>
+        <label for="image">Enter the URL of your image</label>
+        <input type="url" name="image" id="image" placeholder="https//... png">
 
-            <label for="onSearch">Want to buy</label>
-            <input type="radio" name="typeOfOffer" id="onSearch" required>
 
-        </div>
-
-        <div>
-            <label for="description">Product's description</label>
-            <textarea name="description" id="description" cols="30" rows="10" maxlength="140"
-                placeholder="Write a short description of the product. 140 chars max." required></textarea>
-        </div>
-        <div>
-            <label for="image">Enter the URL of your image</label>
-            <input type="url" name="image" id="image" placeholder="https//... png">
-        </div>
-        <div>
-            <label for="category">Tag your product</label>
-            <input type="text" name="category" id="category"
-                placeholder="Enter comma separated tags from 'lifestyle', 'work', 'motor', 'mobile'">
-        </div>
+        <label for="category">Tag your product</label>
+        <input type="text" name="category" id="category"
+            placeholder="Enter comma separated tags from 'lifestyle', 'work', 'motor', 'mobile'">
 
         <button type="submit">Insert ad</button>
     </form>

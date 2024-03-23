@@ -102,7 +102,7 @@ export function registerUserController(registerFormNode) {
             }, registerFormNode);
 
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = './login.html';
             }, 2000);
 
         } catch (error) {

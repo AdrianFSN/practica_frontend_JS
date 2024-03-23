@@ -1,4 +1,5 @@
 function parseAd(ad) {
+
     return {
         owner: ad.userId,
         title: ad.name,
@@ -24,7 +25,12 @@ export async function getAdDetail(adId) {
     try {
         const response = await fetch(url);
         const data = await response.json();
+
+        console.log('Esto es data después de response.json: ', data)
+
         ad = parseAd(data);
+
+        console.log('Esto es ad después de parsear: ', ad)
 
     } catch (error) {
         throw new Error(`There was an error getting ad with id: ${adId}`)

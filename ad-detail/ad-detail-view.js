@@ -14,7 +14,6 @@ export function buildAdDetail(ad) {
     <p>Description from the owner:<p>
     <p><i>"${ad.description}"</i></p>
     ${adTags}
-    <div>
     </div>
     `
 };

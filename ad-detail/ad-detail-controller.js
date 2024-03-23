@@ -17,10 +17,19 @@ export async function adDetailController(adDetailNode) {
         loadSpinner('show-spinner', adDetailNode)
         const ad = await getAdDetail(adId);
 
-        handleRemoveAdButton(adDetailNode, ad);
+        console.log('Esto es ad en el detail controller: ', ad)
+        console.log('Esto es ad.owner en el detail controller: ', ad.owner)
+        console.log('Esto es la comparación en el detail controller: ', ad.owner === undefined)
 
-        const container = adDetailNode.querySelector('#container');
-        container.innerHTML = buildAdDetail(ad);
+
+        if (ad.id !== undefined) {
+            handleRemoveAdButton(adDetailNode, ad);
+
+            const container = adDetailNode.querySelector('#container');
+            container.innerHTML = buildAdDetail(ad);
+        } else {
+            throw new Error('This advertisement does not exist')
+        }
 
     } catch (error) {
         dispatchEvent('notification-ad-detail', {

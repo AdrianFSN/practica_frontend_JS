@@ -2,7 +2,7 @@ import { sessionController } from "./session/session-controller.js";
 import { notificationController } from "./notifications/notifications-controller.js"
 import { spinnerController } from "./spinner/spinner-controller.js";
 import { insertAdController } from "./ad-creation/ad-creation-controller.js";
-import { checkNoToken } from "./utils/checkToken.js";
+import { checkNoToken } from "./utils/checkNoToken.js";
 
 document.addEventListener('DOMContentLoaded', () => {
 

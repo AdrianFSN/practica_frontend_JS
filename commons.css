@@ -2,15 +2,16 @@ body,
 html {
     margin: 0;
     padding: 0;
+    color: #19535F;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #235789;
+    font-family: 'Poppins', sans-serif;
+    background-color: #19535F;
 }
 
 h3 {
-    color: #235789;
+    color: #19535F;
 }
 
 form {
@@ -46,7 +47,7 @@ form button {
 }
 
 header {
-    background-color: #D81E5B;
+    background-color: #d81e5c;
     display: flex;
     position: sticky;
     top: 0px;
@@ -55,7 +56,7 @@ header {
     margin: 0;
     margin-bottom: 1rem;
     border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.832);
 }
 
 nav ul {
@@ -64,25 +65,32 @@ nav ul {
     align-items: center;
     gap: 10px;
     list-style: none;
+    width: 100%;
 }
 
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: #19535F;
 }
 
-nav button,
-nav a {
+nav ul li button,
+nav ul li a {
     display: inline-block;
-    background-color: white;
-    border: none;
+    background: none;
+    border: 1px solid white;
+    color: white;
     border-radius: 5px;
     padding: 0.2rem;
     border-radius: 5px;
-    width: 100px;
+    width: 150px;
     text-align: center;
     font-size: 1rem;
+}
+
+nav ul li button {
+    padding: 0.4rem;
+
 }
 
 #session {
@@ -92,4 +100,34 @@ nav a {
     justify-content: space-between;
     gap: 20px;
     padding: 1rem;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    width: 30%;
+    padding: 0;
+    padding-right: 70%;
+    margin: 0;
+    gap: 10px;
+}
+
+.buttons-container button {
+    background-color: white;
+    border: 1px solid #D81E5B;
+    border-radius: 5px;
+    color: #D81E5B;
+    padding: 0.3rem;
+    margin-top: 0;
+    transition: background-color 0.4s ease, background-color 0.4s ease;
+}
+
+.buttons-container button:hover {
+    background-color: #D78295;
+    border: 1px solid #D81E5B;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3rem;
+    margin-top: 0;
 }

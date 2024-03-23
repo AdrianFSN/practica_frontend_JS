@@ -2,6 +2,7 @@ import { loadSpinner } from "../utils/loadSpinner.js";
 import { getAdDetail, getUserData, deleteAd } from "./ad-detail-model.js";
 import { buildAdDetail } from "./ad-detail-view.js";
 import { dispatchEvent } from "../utils/dispatchEvent.js";
+import { goBackButton } from "../utils/goBackButton.js";
 
 export async function adDetailController(adDetailNode) {
     const params = new URLSearchParams(window.location.search);
@@ -16,11 +17,6 @@ export async function adDetailController(adDetailNode) {
     try {
         loadSpinner('show-spinner', adDetailNode)
         const ad = await getAdDetail(adId);
-
-        console.log('Esto es ad en el detail controller: ', ad)
-        console.log('Esto es ad.owner en el detail controller: ', ad.owner)
-        console.log('Esto es la comparación en el detail controller: ', ad.owner === undefined)
-
 
         if (ad.id !== undefined) {
             handleRemoveAdButton(adDetailNode, ad);
@@ -74,13 +70,6 @@ export async function adDetailController(adDetailNode) {
                 }, adDetailNode);
             };
         };
-    };
-
-    function goBackButton(adDetailNode) {
-        const backButton = adDetailNode.querySelector('#goBack');
-        backButton.addEventListener('click', () => {
-            window.history.back()
-        });
     };
 
 };

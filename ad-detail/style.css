@@ -27,14 +27,13 @@
     display: none;
 }
 
-.buttons-container {
-    margin-bottom: 1rem;
+#removeAdButton {
+    background-color: #D81E5B;
+    color: white;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.buttons-container button {
-    background-color: #D81E5B;
-    border: none;
-    border-radius: 5px;
+#removeAdButton:hover {
+    background-color: #D78295;
     color: white;
-    padding: 0.3rem;
 }

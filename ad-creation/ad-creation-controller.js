@@ -1,12 +1,15 @@
 import { loadSpinner } from "../utils/loadSpinner.js";
 import { dispatchEvent } from "../utils/dispatchEvent.js"
 import { insertAd } from "./ad-creation-model.js";
+import { goBackButton } from "../utils/goBackButton.js";
 
 export function insertAdController(insertAdFormNode) {
 
+    goBackButton(insertAdFormNode)
 
     insertAdFormNode.addEventListener('submit', async (event) => {
         event.preventDefault();
+
 
         handleSubmitNewAd(insertAdFormNode);
     });

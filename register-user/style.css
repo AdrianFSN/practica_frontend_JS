@@ -30,3 +30,22 @@
 .field-error {
     border: 2px solid red;
 }
+
+.buttons-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    width: 30%;
+    padding: 0;
+    padding-right: 70%;
+    margin: 0;
+}
+
+#registerForm .buttons-container button {
+    background-color: white;
+    border: 1px solid #D81E5B;
+    border-radius: 5px;
+    color: #D81E5B;
+    padding: 0.3rem;
+    margin-top: 0;
+}

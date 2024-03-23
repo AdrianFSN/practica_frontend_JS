@@ -1,8 +1,12 @@
 import { dispatchEvent } from "../utils/dispatchEvent.js";
+import { goBackButton } from "../utils/goBackButton.js";
 import { loadSpinner } from "../utils/loadSpinner.js";
 import { createUser } from "./register-user-model.js";
 
 export function registerUserController(registerFormNode) {
+
+    goBackButton(registerFormNode);
+
     registerFormNode.addEventListener('submit', (event) => {
         event.preventDefault();
 

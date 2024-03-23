@@ -14,19 +14,17 @@ export function registerUserController(registerFormNode) {
 
         if (!isEmailValid(registerFormNode)) {
             errors.push('Wrong format for email field');
-            email.classList.add('field-error');
+            toggleErrorClass(registerFormNode, errors);
         };
 
         if (!arePasswordsEqual(registerFormNode)) {
             errors.push('"Password" and "Confirm password" are different')
-            password.classList.add('field-error');
-            passwordCheck.classList.add('field-error');
+            toggleErrorClass(registerFormNode, errors);
         };
 
         if (!isPasswordLengthOk(registerFormNode)) {
-            errors.push(`Password should be at least 6 characters`);
-            password.classList.add('field-error');
-            passwordCheck.classList.add('field-error');
+            errors.push('Passwords must have at least 6 characters')
+            toggleErrorClass(registerFormNode, errors);
         };
 
         showFormErrors(errors);
@@ -53,8 +51,7 @@ export function registerUserController(registerFormNode) {
     function isPasswordLengthOk(registerFormNode) {
         const password = registerFormNode.querySelector('#password');
         const passwordCheck = registerFormNode.querySelector('#passwordCheck');
-        const minLength = password.minLength;
-        return password.value.length >= minLength && passwordCheck.value.length >= minLength;
+        return password.value.length >= password.value.length && passwordCheck.value.length >= password.minLength;
     };
 
     function showFormErrors(errorsList) {
@@ -66,11 +63,26 @@ export function registerUserController(registerFormNode) {
         };
     };
 
-    function resetErrorClass() {
-        email.classList.remove('field-error');
-        password.classList.remove('field-error');
-        passwordCheck.classList.remove('field-error');
-    }
+    function toggleErrorClass(registerFormNode, errorList) {
+        const emailInput = registerFormNode.querySelector('#email');
+        const passwordInput = registerFormNode.querySelector('#password');
+        const passwordCheckInput = registerFormNode.querySelector('#passwordCheck');
+
+        emailInput.classList.remove('field-error');
+        passwordInput.classList.remove('field-error');
+        passwordCheckInput.classList.remove('field-error');
+
+        if (errorList.includes('Wrong format for email field')) {
+            email.classList.add('field-error');
+        };
+
+        if (errorList.includes('"Password" and "Confirm password" are different')
+            || errorList.includes('Passwords must have at least 6 characters')) {
+            password.classList.add('field-error');
+            passwordCheck.classList.add('field-error');
+        };
+
+    };
 
     async function registerUser(registerFormNode) {
         const email = registerFormNode.querySelector('#email');
@@ -79,10 +91,9 @@ export function registerUserController(registerFormNode) {
         try {
             loadSpinner('show-spinner', registerFormNode)
             await createUser(email.value, password.value);
-            resetErrorClass();
 
             dispatchEvent('register-user-notification', {
-                message: 'Congrats, you are a registered user now!',
+                message: 'Success! Log in to start selling!',
                 type: 'success'
             }, registerFormNode);
 

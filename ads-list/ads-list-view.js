@@ -1,7 +1,7 @@
 export function buildAd(ad) {
-    const typeOfOffer = ad.sale ? "On sale" : "On search";
-    const cutInfo = ad.description.length > 50 ? ad.description.slice(0, 50) + '... [Read more]' : ad.description;
-    return `
+  const typeOfOffer = ad.sale ? "On sale" : "On search";
+  const cutInfo = ad.description.length > 50 ? ad.description.slice(0, 50) + '... [Read more]' : ad.description;
+  return `
   <a class="ad" href="ad-detail.html?adId=${ad.id}">
   <div class="ad-container">  
   <ul>
@@ -17,5 +17,8 @@ export function buildAd(ad) {
 }
 
 export function buildEmptyAdsList() {
-    return '<h3>Ups, no ads available so far...</h3>';
+  return `<div class="dark-background-text"><h3>Ups, no ads available so far...</h3>
+  <p>Be the first and create yours!</p>
+  </div>
+  `;
 }

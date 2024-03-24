@@ -1,0 +1,169 @@
+{
+    "ads": [
+        {
+            "name": "Samsung Galaxy F4",
+            "sale": true,
+            "price": 600,
+            "description": "Excellent device. Comes with people's voices when they call you on the phone.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1710759832/Articles/flip-mobile_ecyix4.jpg",
+            "tags": "mobile, work",
+            "userId": 1,
+            "id": 1
+        },
+        {
+            "name": "Olsson Fun Electric Scooter",
+            "sale": true,
+            "price": 100,
+            "description": "Lightning fast. Hard as the wall I didn't have time to see.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1710759704/Articles/electric-scooter_az2imd.jpg",
+            "tags": "lifestyle",
+            "userId": 1,
+            "id": 2
+        },
+        {
+            "name": "Speedy car",
+            "sale": false,
+            "price": "500",
+            "description": "Need a car: fast, furious and cool.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711022809/Articles/Interrogaci%C3%B3n_ibz69o.jpg",
+            "tags": "Not defined by the owner of the ad, sorry.",
+            "userId": 1,
+            "updatedAt": "2024-03-21T15:21:36.174Z",
+            "id": 3
+        },
+        {
+            "name": "Vintage bicycle black",
+            "sale": false,
+            "price": "700",
+            "description": "This bicycle will make you happy for the rest of your life. Is perfect to ride or just to park it in your garage.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711036297/Articles/bicycle_yntazt.jpg",
+            "tags": "Not defined by the owner of the ad, sorry.",
+            "userId": 1,
+            "updatedAt": "2024-03-21T16:00:14.572Z",
+            "id": 4
+        },
+        {
+            "name": "Electric Saw",
+            "sale": false,
+            "price": "75",
+            "description": "I need this for my garden. I want to grow up and spend Sundays like we should.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711037262/Articles/saw_ka3vmr.jpg",
+            "tags": "work",
+            "userId": 1,
+            "updatedAt": "2024-03-21T16:10:29.210Z",
+            "id": 5
+        },
+        {
+            "name": "Semi solid guitar",
+            "sale": false,
+            "price": "2500",
+            "description": "Great sound, excellent look. I'm selling it because I want to buy a black vintage bicycle.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711037876/Articles/guitar_cjwyy6.jpg",
+            "tags": "Not defined by the owner of the ad, sorry.",
+            "userId": 1,
+            "updatedAt": "2024-03-21T16:23:06.525Z",
+            "id": 6
+        },
+        {
+            "name": "Chopper",
+            "sale": false,
+            "price": "35",
+            "description": "You won't find it cheaper than chopper.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711038440/Articles/chopper_gajac4.jpg",
+            "tags": "motor, lifestyle",
+            "userId": 1,
+            "updatedAt": "2024-03-21T16:28:37.933Z",
+            "id": 7
+        },
+        {
+            "name": "Sandwich",
+            "sale": false,
+            "price": "5",
+            "description": "It's so early and I'm so hungry...",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711039734/Articles/sandwich_e3a5l3.jpg",
+            "tags": "lifestyle",
+            "userId": 1,
+            "updatedAt": "2024-03-22T12:35:10.908Z",
+            "id": 8
+        },
+        {
+            "name": "Hammer",
+            "sale": false,
+            "price": "70",
+            "description": "Super light, super tough, super easy to use. This is your hammer!",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711112828/Articles/martillo_pvuejn.jpg",
+            "tags": "work, lifestyle",
+            "userId": 6,
+            "updatedAt": "2024-03-23T11:44:49.160Z",
+            "id": 9
+        },
+        {
+            "name": "Vespa motorbike",
+            "sale": false,
+            "price": "2000",
+            "description": "Would like to drive a Vespa and see what happens.",
+            "image": "https://res.cloudinary.com/douaatasp/image/upload/v1711207167/Articles/vespa_m7fcak.jpg",
+            "tags": "motor",
+            "userId": 3,
+            "updatedAt": "2024-03-23T15:20:48.537Z",
+            "id": 10
+        }
+    ],
+    "users": [
+        {
+            "username": "juan@gmail.com",
+            "password": "$2b$10$X59jBVRrel6DvyiAzrCEAOJ1XmsC2k1EBQpCNs3CNBgrty4t/eKIS",
+            "id": 1
+        },
+        {
+            "username": "raquel@influencia.es",
+            "password": "$2b$10$MKq1ggDlhwUtx.WwDwzqweSIsb9PxIESiuEC0Dy5ArpXXReW/Dah2",
+            "id": 2
+        },
+        {
+            "username": "adrian@gmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1oupDJqCT0dBGp72vJ21qSQOWEDW0luRWi",
+            "id": 3
+        },
+        {
+            "username": "pepe@hotmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1oupDJqCT0dBGp72vJ21qSQOWEDW0luRWi",
+            "id": 4
+        },
+        {
+            "username": "perico@gmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1oupDJqCT0dBGp72vJ21qSQOWEDW0luRWi",
+            "id": 5
+        },
+        {
+            "username": "andres@gmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1oupDJqCT0dBGp72vJ21qSQOWEDW0luRWi",
+            "id": 6
+        },
+        {
+            "username": "pipo@gmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1ouyig2bZ3h4OEnYIDJDBuJTCAaNJARXI2",
+            "id": 7
+        },
+        {
+            "username": "pip@gmail.com",
+            "password": "$2b$10$JR6f/6o.bJCPdX8anGN1ouPqZZm2jn9pqRw9ZDT/8VCPd8wZpC1Bq",
+            "id": 8
+        },
+        {
+            "username": "lelo@gmail.com",
+            "password": "$2b$10$BIPR/IUDIKXEe1huqANTZeCFXjTKdtSpXFwH6o2TNum/ktXyes4Xy",
+            "id": 9
+        },
+        {
+            "username": "holis@gmail.com",
+            "password": "$2b$10$BIPR/IUDIKXEe1huqANTZeYh9RDR2fPN6GK1eRF2/5d9IQUFOx7sW",
+            "id": 10
+        },
+        {
+            "username": "braulia@hotmail.com",
+            "password": "$2b$10$BIPR/IUDIKXEe1huqANTZeCFXjTKdtSpXFwH6o2TNum/ktXyes4Xy",
+            "id": 11
+        }
+    ]
+}
